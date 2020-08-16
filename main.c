@@ -38,7 +38,7 @@ int main(int argc, char *argv[]) {
 
     __u8 setbuffer[256] = {};
     if (strcmp(argv[optind], "on") == 0) {
-        setbuffer[0] = 0x02;
+        setbuffer[0] = 0x01;
     }
 
     struct uvc_xu_control_query set_query = {
@@ -46,7 +46,7 @@ int main(int argc, char *argv[]) {
         .selector = 0x02,
         .query = UVC_SET_CUR,
         .size = 1,
-        .data = 0x02,
+        .data = 0x01,
     };
 
     int result = 0;
