@@ -39,14 +39,13 @@ int main(int argc, char *argv[]) {
     __u8 setbuffer[256] = {};
     if (strcmp(argv[optind], "on") == 0) {
         setbuffer[0] = 0x02;
-        setbuffer[1] = 0x19;
     }
 
     struct uvc_xu_control_query set_query = {
         .unit = 0x0e,
         .selector = 0x0e,
         .query = UVC_SET_CUR,
-        .size = 2,
+        .size = 1,
         .data = (__u8*)&setbuffer,
     };
 
