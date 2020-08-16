@@ -54,25 +54,7 @@ int main(int argc, char *argv[]) {
 
     result = ioctl(fd, UVCIOC_CTRL_QUERY, &set_query);
     if (result < 0) {
-        printf("Error code: %d, errno: %d, error: %s\n", result, errno, strerror(errno));
-        switch(errno) {
-           case ENOMEM:
-                printf("Not enough memory to perform the operation.\n");
-                break;
-           case EPERM:
-                printf("Insufficient privileges (super user privileges are required).\n");
-                break;
-           case EINVAL:
-                printf("No such UVC control.\n");
-                break;
-           case EOVERFLOW:
-                printf("The requested offset and size would overflow the UVC control.\n");
-                break;
-           case EEXIST:
-                printf("Mapping already exists.\n");
-                break;
-        }
-        return -1;
+        printf("Test: Error code: %d, errno: %d, error: %s\n", result, errno, strerror(errno));
     }
 
     close(fd);
