@@ -42,8 +42,8 @@ int main(int argc, char *argv[]) {
     }
 
     struct uvc_xu_control_query set_query = {
-        .unit = 0x0e,
-        .selector = 0x0e,
+        .unit = 0x00,
+        .selector = 0x02,
         .query = UVC_SET_CUR,
         .size = 1,
         .data = (__u8*)&setbuffer,
