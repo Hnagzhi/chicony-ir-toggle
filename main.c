@@ -46,7 +46,7 @@ int main(int argc, char *argv[]) {
         .selector = 0x02,
         .query = UVC_SET_CUR,
         .size = 1,
-        .data = (__u8*)&setbuffer,
+        .data = 0x02,
     };
 
     int result = 0;
